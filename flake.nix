@@ -10,8 +10,8 @@
       pkgs = import nixpkgs {
         system = "x86_64-linux";
       };
-      releaseVersion = "2.5.0";
-      releaseSha256 = "sha256-zXu38QCCvdBbQyyDNRTAt/bk83TPoPQURsflOn2MPPs=";
+      releaseVersion = "4.1.0";
+      releaseSha256 = "sha256-ViElTl8rDcYOg74P2f1PpP9k6bF3KZUAiOcWBkF7MZY=";
     in
     {
       packages."x86_64-linux".default = pkgs.stdenv.mkDerivation {
@@ -19,7 +19,7 @@
         version = releaseVersion;
 
         src = pkgs.fetchurl {
-          url = "https://github.com/Moulberry/PandoraLauncher/releases/download/v${releaseVersion}/PandoraLauncher-Linux-${releaseVersion}-x86_64";
+          url = "https://github.com/Moulberry/PandoraLauncher/releases/download/v${releaseVersion}/PandoraLauncher-Linux-x86_64-Portable";
           sha256 = releaseSha256;
         };
         dontUnpack = true;
