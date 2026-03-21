@@ -96,7 +96,7 @@
 
           runHook postInstall
 
-          makeWrapper $out/libexec/PandoraLauncher $out/bin/PandoraLauncher \
+          makeWrapper $out/libexec/PandoraLauncher $out/bin/PandoraLauncher-unwrapped \
             --prefix LD_LIBRARY_PATH : ${
               pkgs.lib.makeLibraryPath (
                 with pkgs;
@@ -166,15 +166,15 @@
           description = "Pandora is a modern Minecraft launcher that balances ease-of-use with powerful instance management features";
           homepage = "https://pandora.moulberry.com/";
           license = pkgs.lib.licenses.mit;
-          mainProgram = "PandoraLauncher";
+          mainProgram = "PandoraLauncher-unwrapped";
           platforms = [ "x86_64-linux" ];
         };
       };
 
       pandora-fhs = pkgs.buildFHSEnv {
-        name = "pandora_launcher";
+        name = "PandoraLauncher";
         targetPkgs = minecraftLibs;
-        runScript = "${pandora-portable}/bin/PandoraLauncher";
+        runScript = "${pandora-portable}/bin/PandoraLauncher-unwrapped";
       };
     in
     {
@@ -189,7 +189,7 @@
           description = "Modern Minecraft launcher (FHS Wrapped)";
           homepage = "https://github.com/Moulberry/PandoraLauncher";
           license = licenses.mit;
-          mainProgram = "pandora_launcher";
+          mainProgram = "PandoraLauncher";
         };
       };
     };
