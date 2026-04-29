@@ -12,7 +12,7 @@
         system = "x86_64-linux";
       };
       releaseVersion = "5.0.2";
-      releaseSha256 = "sha256-ViElTl8rDcYOg74P2f1PpP9k6bF3KZUAiOcWBkF7MZY=";
+      releaseSha256 = "sha256-gvFRKSLbf2GsmMw6rdPxj4o9JTrnosLnJUEZP8mUjGY=";
 
       minecraftLibs =
         pkgs: with pkgs; [
@@ -86,6 +86,7 @@
             openssl
             libxkbcommon
             libxcb
+            libseccomp
           ]
         );
         installPhase = ''
