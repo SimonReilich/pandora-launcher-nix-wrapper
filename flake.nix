@@ -11,8 +11,8 @@
       pkgs = import nixpkgs {
         system = "x86_64-linux";
       };
-      releaseVersion = "5.5.3";
-      releaseSha256 = "sha256-LfJ59y6Qe83VPbxPyZL+rkIRFOzmvEknLOO9BEcN4p0=";
+      releaseVersion = "6.0.0";
+      releaseSha256 = "sha256-REycR2wVgPeDTy2eT1HYaIexdUjr9gNAxN/WUr3T/T8=";
 
       minecraftLibs =
         pkgs: with pkgs; [
